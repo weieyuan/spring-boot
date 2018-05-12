@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import ws.app.utils.activemq.ActiveMqProducer;
+import ws.app.utils.application.ApplicationHelper;
 
 @SpringBootApplication
 public class Application {
@@ -27,7 +27,15 @@ public class Application {
 			System.out.println(name);
 			System.out.println("*****************************");
 		}
-		context.getBean(ActiveMqProducer.class).send("This is a msg");
+		// context.getBean(ActiveMqProducer.class).send("This is a msg");
+
+		String[] arrBeanNames = ApplicationHelper.getInstance().getContext().getBeanDefinitionNames();
+
+		for (String name : arrBeanNames) {
+			System.out.println("**************************");
+			System.out.println(name);
+			System.out.println("*****************************");
+		}
 	}
 
 }

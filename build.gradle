@@ -11,7 +11,7 @@ apply plugin: "java"
 apply plugin: "eclipse"
 apply plugin: "spring-boot"
 
-//apply plugin: "idea"//��������Intellij����
+//apply plugin: "idea"//Intellij工程需要
 
 jar{
 	baseName="spring-boot-study"
@@ -30,6 +30,8 @@ dependencies{
 	compile("org.springframework.boot:spring-boot-starter-actuator")
 	compile("org.springframework:spring-jms")
 	compile("org.apache.activemq:activemq-broker")
+	//compile("org.springframework.boot:spring-boot-starter-log4j")
+	//compile("log4j:log4j")
 	
 	testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
